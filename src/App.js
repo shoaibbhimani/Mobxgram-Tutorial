@@ -5,6 +5,7 @@ import { Switch, Route, withRouter } from "react-router-dom"
 import "./App.css"
 
 import MobxgramList from "./components/MobxgramList.js"
+import PhotoDetails from "./components/PhotoDetail.js"
 
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
         mobxgramStore.mobxgramList.length ? 
         <Switch>
           <Route exact path="/" component={MobxgramList} />
-          <Route path="/:imageName" render={() => <h2>imageName</h2>} />
+          <Route path="/:imageName" component={PhotoDetails} />
         </Switch> : null
       }
         
