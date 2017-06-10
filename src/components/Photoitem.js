@@ -4,13 +4,14 @@ import { NavLink } from "react-router-dom"
 
 class PhotoItem extends React.Component {
 	render(){
-		const { mobxgramStoreItem } = this.props;
+		const { mobxgramStoreItem, increamentLikes, index } = this.props;
 		return (
 					<section className="col-md-4 text-center">
 						<section className="thumbnail">
 						  <section>
 						    <img src={mobxgramStoreItem.imagelinks} alt=""  />
 						  </section>
+
 						  <h3>
 						    
 						      {mobxgramStoreItem.name}
@@ -24,13 +25,15 @@ class PhotoItem extends React.Component {
 								</NavLink>
 							</div>
 							<div>
-								<NavLink  to={`/${mobxgramStoreItem.name}-${mobxgramStoreItem.id}`}>
-           			 	<i className="fa fa-thumbs-up"></i>
+							
+           			 	<i onClick={() => {
+           			 			increamentLikes(index)
+           			 	}} className="fa fa-thumbs-up"></i>
            			  <span>{mobxgramStoreItem.likes}</span>
-								</NavLink>
+							
 							</div>
 						 </footer>
-						</section>
+					 </section>
 					</section>
 				)
 	}

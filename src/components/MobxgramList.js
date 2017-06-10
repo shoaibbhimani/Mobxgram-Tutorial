@@ -4,12 +4,17 @@ import PhotoItem from "./Photoitem.js"
 
 class MobxgramList extends React.Component {
 	render(){
+		const { mobxgramStore } = this.props;
 		return (
 			 <section className="row">
 			 		<section className="col-md-10 col-md-offset-1">
 			 			{
-			 				this.props.mobxgramStore.mobxgramList.map((mobxgramStoreItem) => {
-			 					return <PhotoItem key={mobxgramStoreItem.id} mobxgramStoreItem={mobxgramStoreItem} />
+			 				mobxgramStore.mobxgramList.map((mobxgramStoreItem, index) => {
+			 					return <PhotoItem 
+			 					   increamentLikes={mobxgramStore.increamentLikes} 
+			 					   key={mobxgramStoreItem.id} 
+			 					   index={index} 
+			 					   mobxgramStoreItem={mobxgramStoreItem} />
 			 				})
 			 			}
 			 		</section>
