@@ -1,10 +1,13 @@
 import { extendObservable,action } from "mobx"
-
+import sampleStore from "./sampleStore.js"
 
 class Mobxgram {
 	constructor(){
 		extendObservable(this,{
-			instagramList:[]
+			mobxgramList:[],
+			getStore:action(() => {
+				this.mobxgramList.replace(sampleStore);
+			})
 		})
 	}
 }
