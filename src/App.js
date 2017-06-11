@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from "mobx-react"
-import { Switch, Route, withRouter } from "react-router-dom"
+import { Switch, Route, withRouter, NavLink } from "react-router-dom"
 
 import "./App.css"
 
@@ -18,6 +18,12 @@ class App extends Component {
     const { mobxgramStore } = this.props;
     return (
       <div>
+      <h2 className="text-center">
+        <NavLink to="/">
+          MobxGram
+        </NavLink>
+      </h2> 
+        
       {
         mobxgramStore.mobxgramList.length ? 
         <Switch>

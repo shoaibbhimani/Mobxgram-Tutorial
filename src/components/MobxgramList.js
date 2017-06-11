@@ -7,7 +7,7 @@ class MobxgramList extends React.Component {
 		const { mobxgramStore } = this.props;
 		return (
 			 <section className="row">
-			 		<section className="col-md-10 col-md-offset-1">
+			 		<section className="col-sm-10 col-sm-offset-1">
 			 			{
 			 				mobxgramStore.mobxgramList.map((mobxgramStoreItem, index) => {
 			 					return <PhotoItem 

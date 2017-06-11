@@ -6,10 +6,10 @@ class PhotoItem extends React.Component {
 	render(){
 		const { mobxgramStoreItem, increamentLikes, index } = this.props;
 		return (
-					<section className="col-md-4 text-center">
+					<section className="col-sm-4 text-center">
 						<section className="thumbnail">
 						  <section>
-						    <img src={mobxgramStoreItem.imagelinks} alt=""  />
+						    <img className="img-responsive" src={mobxgramStoreItem.imagelinks} alt=""  />
 						  </section>
 
 						  <h3>

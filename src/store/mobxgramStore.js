@@ -20,6 +20,24 @@ class Mobxgram {
            newValue,
            ...this.mobxgramList.slice(index+1),
 				]
+			}),
+			addComments:action(({ index, author, text }) => {
+
+				let mobxgramList = this.mobxgramList.slice();
+				let selectedPhotoItem = mobxgramList[index];
+				selectedPhotoItem.comments = [
+					...selectedPhotoItem.comments,
+					{
+						author,
+						text
+					}
+				]
+
+
+				this.mobxgramList.replace(mobxgramList)
+
+
+
 			})
 		})
 	}
