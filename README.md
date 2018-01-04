@@ -1,6 +1,4 @@
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/bXeDmMz8XA15cpujG8aTaNPR/shoaibbhimani/Mobxgram-Tutorial'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/bXeDmMz8XA15cpujG8aTaNPR/shoaibbhimani/Mobxgram-Tutorial.svg' />
-</a>
+
 If you want to learn more about  ReactJS, Mobx and React Router V4 you can check out my course I offer support and continuous updating of  these course as these technology changes and also it is the best way to support my channel 
 
 HERE IS THE LINK
