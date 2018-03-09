@@ -1,6 +1,7 @@
 import { extendObservable, action } from "mobx";
 import axios from "axios";
 
+const ROOTURL = "http://localhost:3001/photolist";
 class Mobxgram {
   constructor() {
     extendObservable(this, {
@@ -8,7 +9,7 @@ class Mobxgram {
       getStore: action(() => {
         debugger;
         axios
-          .get("http://localhost:3001/photolist")
+          .get(ROOTURL)
           .then(response => {
             this.mobxgramList.replace(response.data);
           })
@@ -20,7 +21,7 @@ class Mobxgram {
         this.mobxgramList = this.mobxgramList.concat(newPhoto);
 
         axios
-          .post("http://localhost:3001/photolist", {
+          .post(ROOTURL, {
             ...newPhoto
           })
           .then(() => {})
@@ -40,6 +41,10 @@ class Mobxgram {
           newValue,
           ...this.mobxgramList.slice(index + 1)
         ];
+
+        axios.put(ROOTURL + "/" + newValue.id, {
+          ...newValue
+        });
       }),
       addComments: action(({ index, author, text }) => {
         let mobxgramList = this.mobxgramList.slice();
