@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 import PhotoItem from "./Photoitem.js";
 
 class MobxgramList extends React.Component {
+  componentDidMount() {
+    this.props.mobxgramStore.getStore();
+  }
   render() {
     const { mobxgramStore } = this.props;
     return (

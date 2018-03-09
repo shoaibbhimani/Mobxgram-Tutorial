@@ -1,0 +1,18 @@
+{
+  "photolist": [
+    {
+      "name": "Test",
+      "imagelinks": "http://lorempixel.com/300/300/city/4",
+      "comments": [],
+      "likes": 0,
+      "id": 1
+    },
+    {
+      "name": "Test 2",
+      "imagelinks": "http://lorempixel.com/300/300/city/2",
+      "comments": [],
+      "likes": 0,
+      "id": 2
+    }
+  ]
+}
