@@ -5,6 +5,8 @@ import sampleStore from "./sampleStore.js";
 
 const ROOTURL = "http://localhost:7777/photolists";
 
+const COMMENTURL = "http://localhost:7777/comments";
+
 class Mobxgram {
   constructor() {
     extendObservable(this, {
@@ -38,19 +40,28 @@ class Mobxgram {
           newValue,
           ...this.mobxgramList.slice(index + 1)
         ];
+
+        axios.put(ROOTURL + "/" + newValue.id, newValue);
       }),
       addComments: action(({ index, author, text }) => {
         let mobxgramList = this.mobxgramList.slice();
         let selectedPhotoItem = mobxgramList[index];
-        selectedPhotoItem.comments = [
-          ...selectedPhotoItem.comments,
-          {
+
+        axios
+          .post(COMMENTURL, {
             author,
             text
-          }
-        ];
+          })
+          .then(response => {
+            selectedPhotoItem.comments = selectedPhotoItem.comments.concat(
+              response.data.id
+            );
+            this.mobxgramList.replace(mobxgramList);
 
-        this.mobxgramList.replace(mobxgramList);
+            axios.put(ROOTURL + "/" + selectedPhotoItem.id, {
+              ...selectedPhotoItem
+            });
+          });
       })
     });
   }

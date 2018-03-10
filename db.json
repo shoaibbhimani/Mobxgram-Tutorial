@@ -4,14 +4,16 @@
       "name": "Test",
       "imagelinks": "http://lorempixel.com/300/300/city/4",
       "comments": [],
-      "likes": 0,
+      "likes": 1,
       "id": 1
     },
     {
       "name": "Mumbai",
       "imagelinks": "http://lorempixel.com/300/300/city/1",
-      "comments": [],
-      "likes": 0,
+      "comments": [
+        1
+      ],
+      "likes": 4,
       "id": 2
     },
     {
@@ -20,6 +22,13 @@
       "comments": [],
       "likes": 0,
       "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "author": "Test",
+      "text": "Blah Blah",
+      "id": 1
     }
   ]
 }
