@@ -25,12 +25,21 @@ class AddPhoto extends React.Component {
   addPhotoToStore = event => {
     event.preventDefault();
     const { resetForm, name, imagelinks } = this.addPhotoLocalState;
-    this.props.mobxgramStore.addPhoto({
-      name: name,
-      imagelinks: imagelinks,
-      comments: [],
-      likes: 0
-    });
+    const { history } = this.props;
+
+    this.props.mobxgramStore
+      .addPhoto({
+        name: name,
+        imagelinks: imagelinks,
+        comments: [],
+        likes: 0
+      })
+      .then(() => {
+        history.push("/");
+      })
+      .catch(() => {
+        //error
+      });
 
     resetForm();
   };

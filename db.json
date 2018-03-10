@@ -1,0 +1,25 @@
+{
+  "photolists": [
+    {
+      "name": "Test",
+      "imagelinks": "http://lorempixel.com/300/300/city/4",
+      "comments": [],
+      "likes": 0,
+      "id": 1
+    },
+    {
+      "name": "Mumbai",
+      "imagelinks": "http://lorempixel.com/300/300/city/1",
+      "comments": [],
+      "likes": 0,
+      "id": 2
+    },
+    {
+      "name": "Pune",
+      "imagelinks": "http://lorempixel.com/300/300/city/4",
+      "comments": [],
+      "likes": 0,
+      "id": 3
+    }
+  ]
+}

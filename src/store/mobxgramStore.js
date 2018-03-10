@@ -1,15 +1,30 @@
 import { extendObservable, action } from "mobx";
+import axios from "axios";
+
 import sampleStore from "./sampleStore.js";
+
+const ROOTURL = "http://localhost:7777/photolists";
 
 class Mobxgram {
   constructor() {
     extendObservable(this, {
       mobxgramList: [],
       getStore: action(() => {
-        this.mobxgramList.replace(sampleStore);
+        //this.mobxgramList.replace(sampleStore);
+
+        axios
+          .get(ROOTURL)
+          .then(response => {
+            this.mobxgramList.replace(response.data);
+          })
+          .catch(() => {
+            //error
+          });
       }),
       addPhoto: action(newPhoto => {
         this.mobxgramList = this.mobxgramList.concat(newPhoto);
+
+        return axios.post(ROOTURL, newPhoto);
       }),
       increamentLikes: action(index => {
         var selectedListItem = this.mobxgramList[index];
